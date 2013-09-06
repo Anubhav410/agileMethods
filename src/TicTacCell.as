@@ -10,6 +10,7 @@ package
 		public function TicTacCell(id:int)
 		{
 			trace( "TicTacCell ctor no: " + id);
+			state = "blank";	//initializing the ceel with "blank" string
 		}
 		
 	}

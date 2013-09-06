@@ -12,13 +12,13 @@ package
 		
 		public function Main():void 
 		{
+			
+			
 		 	if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
-	
-			
 			var tic:TicTacGame = new TicTacGame();
-				
-		}
+ 			
+ 		}
 		
 		private function init(e:Event = null):void 
 		{

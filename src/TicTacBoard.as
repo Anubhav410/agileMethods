@@ -13,16 +13,34 @@ package
  		}
 		public function createCells():void
 			{
-				var cellArray:TicTacCell;// [] = new TicTacCell[9];
+				var cellArray:Array = new Array();;// [] = new TicTacCell[9];
+				
 				for (var i:int = 0 ; i < 9 ; i++)
 				{
-					cellArray = new TicTacCell(i);
+					cellArray[i] = new TicTacCell(i);
 				}
 			}
 
+			public function isValidCell(cellNo:int):Boolean
+			{
+				var valid:Boolean = true;
+				trace("checking of the move is a valid empty cell");
+				
+				
+				return valid;
+			}
 			public function makeMove(cellNo:int , sign:String):void
 			{
-				trace("Coloring the cell " + cellNo + "with the sign " + sign);
+				//check if its a vlaid empty cell
+				if (isValidCell(cellNo))
+				{
+					trace("Coloring the cell " + cellNo + "with the sign " + sign);
+				}
+				else
+				{
+					trace("bad move!!");
+				}
+				
 			}
 
 	}
