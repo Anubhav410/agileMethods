@@ -8,16 +8,24 @@
     <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
+<<<<<<< HEAD
     <movie version="9" />
     <movie minorVersion="0" />
+=======
+    <movie version="10" />
+    <movie minorVersion="1" />
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
+<<<<<<< HEAD
     <class path="..\..\lukebayes-asunit-e2af845\as3\src" />
     <class path="testsrc" />
+=======
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
   </classpaths>
   <!-- Build options -->
   <build>

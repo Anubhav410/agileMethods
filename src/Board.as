@@ -22,6 +22,7 @@ package
 			
 		}
 			
+<<<<<<< HEAD
 		public function won():Boolean
 		{
 			trace("in WON : marker" + cells[0].marker);
@@ -36,6 +37,8 @@ package
 		{
 			return false;
 		}
+=======
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
 		public function kill():void 
 		{
 			

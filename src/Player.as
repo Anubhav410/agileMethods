@@ -19,6 +19,7 @@ package
 		
 		public function makeMove(x:int,y:int):void
 		{
+<<<<<<< HEAD
 			if(board != null)
 			{
 				var offset:int = x * 3 + y ;	
@@ -39,13 +40,23 @@ package
 				alternate = (alternate == 0?1:0);
 				trace("alt : " + alternate);
 			}		
+=======
+			var offset:int = x * 3 + y;
+			board.cells[offset] = marker[alternate];
+			alternate = (alternate == 0?1:0);
+			trace("alt : " + alternate);
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
 		}
 		
 		public function undo():void
 		{
 			
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
 		public function start():void
 		{
 			//initialize a board with all cells empty
@@ -66,10 +77,15 @@ package
 		{
 			if (board != null)
 			{
+<<<<<<< HEAD
 				trace("Ending game.");
 				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
 			}
 		//	board = null;
+=======
+				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
+			}
+>>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
 		}
 
 /*		

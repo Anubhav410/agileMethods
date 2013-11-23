@@ -1,6 +1,6 @@
 package 
 {
-	
+ 	
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -8,7 +8,11 @@ package
 	import asunit.textui.TestRunner;
 	
 
-	/**
+ 	import flash.display.DisplayObject;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	
+ 	/**
 	 * ...
 	 * @author Anubhav
 	 */
@@ -17,7 +21,8 @@ package
 		
 		public function Main():void 
 		{
-			
+
+			 
 
  			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
@@ -26,12 +31,14 @@ package
 			stage.addChild(unittests);
 			unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
 			
-		
-		}
+		 
+ 			if (stage) init();
+			else addEventListener(Event.ADDED_TO_STAGE, init);
+ 		}
 		
 		private function init(e:Event = null):void 
 		{
-	 		removeEventListener(Event.ADDED_TO_STAGE, init);
+ 	 		removeEventListener(Event.ADDED_TO_STAGE, init);
   	
 			// entry point
 			var pl:Player = new Player();
@@ -46,7 +53,13 @@ package
 //			pl.makeMove(0,1);
 			
 			pl.stop();
-		}
+ 
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			// entry point
+			var pl:Player = new Player();
+			pl.start();
+ 
+ 		}
 		
 	}
 	
