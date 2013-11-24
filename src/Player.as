@@ -22,7 +22,7 @@ package
 		{
 			if (lastMove != -1)
 			{
-				board.cells[lastMove] = "null";
+				board.cells[lastMove].marker = "null";
 				alternate = (alternate == 0?1:0);
 			}
 		}
@@ -66,11 +66,7 @@ package
 			return res;
   		}
   		
-		public function undo():void
-		{
-			
-		}
-  		public function start():Boolean
+   		public function start():Boolean
  		{
 			//initialize a board with all cells empty
 			var ret:Boolean = true;

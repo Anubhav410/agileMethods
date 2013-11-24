@@ -87,7 +87,19 @@ package
 			
 		}
 		
-		
+		public function testUndoMove():void 
+		{
+			var pl:Player = new Player();
+			pl.start();
+					
+			assertTrue(pl.makeMove(0, 0));
+			assertFalse(pl.makeMove(0, 0));
+			
+			pl.undoMove();
+			
+			assertTrue(pl.makeMove(0, 0));
+
+		}
 		public function testGameWon():void 
 		{
 			var pl:Player = new Player();
