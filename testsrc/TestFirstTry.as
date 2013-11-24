@@ -39,6 +39,25 @@ package
 			pl.stop();
 		}
 
+		public function testGameDraw():void 
+		{
+				var pl:Player = new Player();
+				pl.start();
+				pl.makeMove(0, 0);
+				pl.makeMove(0, 1);		
+				pl.makeMove(0, 2);
+				pl.makeMove(1 ,0);
+				pl.makeMove(1 ,1);
+				pl.makeMove(1, 2);
+				pl.makeMove(2, 0);		
+				pl.makeMove(2, 1);
+				pl.makeMove(2 ,2);
+ 				
+				assertTrue(pl.board.draw());
+			
+
+		}
+		
 		public function testGameWon():void 
 		{
 			var pl:Player = new Player();
@@ -62,8 +81,6 @@ package
  			
 			assertFalse(pl.board.won());
 			
-			
-			
 			pl.stop();
 		}
 		public function testGameStart():void
@@ -79,7 +96,9 @@ package
 			pl.start();
 			assertTrue(pl.stop());
 		}
-	
+
+		
+		
 		public function firstOne():void 
 		{
  				assertEquals(2,2);

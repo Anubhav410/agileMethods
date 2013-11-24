@@ -65,7 +65,17 @@ package
 		}
 		public function draw():Boolean
 		{
-			return false;
+			var res:Boolean = true;
+			
+  			for (var i:int = 0 ; i < 9 ; i++)
+			{
+				if (cells[i].marker == "null" )
+				{
+					res = false;
+					break;
+				}
+			}
+	    	return res;
 		}
   		public function kill():void 
 	 	{

@@ -15,6 +15,7 @@ package
 			addTest(new TestFirstTry("testGameStop"));
 			addTest(new TestFirstTry("testMakeMove"));
 			addTest(new TestFirstTry("testGameWon"));
+			addTest(new TestFirstTry("testGameDraw"));
 				
 		}
 			
