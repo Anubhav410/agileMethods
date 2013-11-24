@@ -16,7 +16,9 @@ package
 			addTest(new TestFirstTry("testMakeMove"));
 			addTest(new TestFirstTry("testGameWon"));
 			addTest(new TestFirstTry("testGameDraw"));
-				
+			addTest(new TestFirstTry("testCellFreezeAfterMove"));	
+//			addTest(new TestFirstTry("testUndoMove"));	
+
 		}
 			
 		

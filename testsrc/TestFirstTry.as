@@ -54,9 +54,39 @@ package
 				pl.makeMove(2 ,2);
  				
 				assertTrue(pl.board.draw());
-			
+
+				pl.restart();
+				
+				pl.makeMove(0, 0);
+				pl.makeMove(0, 1);		
+				pl.makeMove(0, 2);
+				pl.makeMove(1 ,0);
+				pl.makeMove(1 ,1);
+				pl.makeMove(1, 2);
+				pl.makeMove(2, 0);		
+				pl.makeMove(2, 1);
+ 				
+				assertFalse(pl.board.draw());
+
 
 		}
+		
+		public function testCellFreezeAfterMove():void
+		{
+			var pl:Player = new Player();
+			pl.start();
+			
+	//		trace("here i am");
+			
+			assertTrue(pl.makeMove(0, 0));
+			assertFalse(pl.makeMove(0, 0));
+			assertTrue(pl.makeMove(0, 1));
+			assertTrue(pl.makeMove(1, 0));
+			assertFalse(pl.makeMove(0, 1));
+		
+			
+		}
+		
 		
 		public function testGameWon():void 
 		{

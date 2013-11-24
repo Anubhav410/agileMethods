@@ -34,28 +34,28 @@ package
   	 	public function won():Boolean
  		{
 			trace("in WON : marker" + cells[0].marker);
-			if (cells[0].marker == cells[1].marker && cells[1].marker == cells[2].marker)
+			if (cells[0].marker == cells[1].marker && cells[1].marker == cells[2].marker && cells[2].marker != "null")
 			{
 		//		trace("Awesome!!!!!");
 				return true;
 			}
 
-			if (cells[3].marker == cells[4].marker && cells[4].marker == cells[5].marker)
+			if (cells[3].marker == cells[4].marker && cells[4].marker == cells[5].marker && cells[5].marker != "null")
 			{
 		//		trace("Awesome!!!!!");
 				return true;
 			}
-			if (cells[6].marker == cells[7].marker && cells[7].marker == cells[8].marker)
+			if (cells[6].marker == cells[7].marker && cells[7].marker == cells[8].marker && cells[8].marker != "null")
 			{
 		//		trace("Awesome!!!!!");
 				return true;
 			}
-			if (cells[0].marker == cells[4].marker && cells[4].marker == cells[8].marker)
+			if (cells[0].marker == cells[4].marker && cells[4].marker == cells[8].marker && cells[8].marker != "null")
 			{
 		//		trace("Awesome!!!!!");
 				return true;
 			}
-			if (cells[2].marker == cells[4].marker && cells[4].marker == cells[6].marker)
+			if (cells[2].marker == cells[4].marker && cells[4].marker == cells[6].marker && cells[6].marker != "null")
 			{
 		//		trace("Awesome!!!!!");
 				return true;
