@@ -29,11 +29,9 @@ package
 		{
  			if (stage)
 			{
-				trace("jnhbjh");
-				var unittests:TestRunner = new TestRunner();
+		 		var unittests:TestRunner = new TestRunner();
 				stage.addChild(unittests);
 				unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
-
 		 		init();
 			}
 			else addEventListener(Event.ADDED_TO_STAGE, init);

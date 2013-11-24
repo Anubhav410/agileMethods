@@ -17,8 +17,9 @@ package
 				alternate = 0;
 		}
 		
-		public function makeMove(x:int,y:int):void
+		public function makeMove(x:int,y:int):Boolean
 		{
+			var res:Boolean = true;
    			if(board != null)
  			{
 				var offset:int = x * 3 + y ;	
@@ -26,53 +27,72 @@ package
 				if (board.won() == true)
 				{
 					trace("Player : " + alternate+1 + " won the game");
-					this.stop();
+			//		this.stop();
+					res = false;
+
 				}
 				
 				if (board.draw() == true)
 				{
 					trace("The match is a draw");
-					this.stop();
-
+				//	this.stop();
 				}
 				
 				alternate = (alternate == 0?1:0);
 				trace("alt : " + alternate);
 			}		
-  			var offset:int = x * 3 + y;
-			board.cells[offset] = marker[alternate];
-			alternate = (alternate == 0?1:0);
-			trace("alt : " + alternate);
- 		}
+			else
+			{
+				res =  false;
+			}
+			return res;
+  		}
   		
 		public function undo():void
 		{
 			
 		}
-  		public function start():void
+  		public function start():Boolean
  		{
 			//initialize a board with all cells empty
+			var ret:Boolean = true;
 			if(board == null)
 			{
 				trace("Game Started");
 				board = new Board();
+				ret = true;
 			}
 			else 
 			{
 				// a game is already running
 				trace("Game already running");
+				ret =  false;
 			}
 			
+			return ret;
 		}
 		
-		public function stop():void
+		public function restart():Boolean 
 		{
-			if (board != null)
+				board.makeAllCellsZero();
+				return true;
+		}
+		
+		public function stop():Boolean
+		{
+			if (board ==  null)
+			{
+				trace("Nothing to end");
+				return false;
+			}
+			else (board != null)
 			{
   				trace("Ending game.");
 				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
 			}
-		//	board = null;
+			board = null;
+			return true;
 		}
   
+}
 }
