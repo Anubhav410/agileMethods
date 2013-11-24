@@ -19,13 +19,8 @@ package
 		
 		public function makeMove(x:int,y:int):void
 		{
-<<<<<<< HEAD
- 			if(board != null)
-=======
-<<<<<<< HEAD
-			if(board != null)
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-			{
+   			if(board != null)
+ 			{
 				var offset:int = x * 3 + y ;	
 				board.cells[offset].mark(marker[alternate]);
 				if (board.won() == true)
@@ -44,37 +39,18 @@ package
 				alternate = (alternate == 0?1:0);
 				trace("alt : " + alternate);
 			}		
-<<<<<<< HEAD
- 			var offset:int = x * 3 + y;
+  			var offset:int = x * 3 + y;
 			board.cells[offset] = marker[alternate];
 			alternate = (alternate == 0?1:0);
 			trace("alt : " + alternate);
  		}
-=======
-=======
-			var offset:int = x * 3 + y;
-			board.cells[offset] = marker[alternate];
-			alternate = (alternate == 0?1:0);
-			trace("alt : " + alternate);
->>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
-		}
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-		
+  		
 		public function undo():void
 		{
 			
 		}
-<<<<<<< HEAD
- 		public function start():void
-=======
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
-		public function start():void
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-		{
+  		public function start():void
+ 		{
 			//initialize a board with all cells empty
 			if(board == null)
 			{
@@ -93,43 +69,10 @@ package
 		{
 			if (board != null)
 			{
-<<<<<<< HEAD
- 				trace("Ending game.");
+  				trace("Ending game.");
 				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
 			}
 		//	board = null;
- 				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
-			}
- 		}
-=======
-<<<<<<< HEAD
-				trace("Ending game.");
-				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
-			}
-		//	board = null;
-=======
-				board.kill();	//the kill function should deallocate the cells and finalize the board and exit
-			}
->>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
 		}
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-
-/*		
-		public function pause():void
-		{
-			if ( board != null)
-			{
-				//the game is supposed to be saved and you go to the main menu
-				//this is supposed to be done by the game controller
- 			}
-		}
-*/
-/*		
-		public function selectMarker():void
-		{
-			marker = "cross";
- 		}
-*/
-	}
-
+  
 }

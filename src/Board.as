@@ -22,13 +22,8 @@ package
 			
 		}
 			
-<<<<<<< HEAD
- 		public function won():Boolean
-=======
-<<<<<<< HEAD
-		public function won():Boolean
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-		{
+  	 	public function won():Boolean
+ 		{
 			trace("in WON : marker" + cells[0].marker);
 			if (cells[0].marker == cells[1].marker && cells[1].marker == cells[2].marker)
 			{
@@ -41,14 +36,8 @@ package
 		{
 			return false;
 		}
-<<<<<<< HEAD
- 		public function kill():void 
-=======
-=======
->>>>>>> ee60398e0fcf760f87d767931d252033adb4eba3
-		public function kill():void 
->>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
-		{
+  		public function kill():void 
+	 	{
 			
 		}
 
