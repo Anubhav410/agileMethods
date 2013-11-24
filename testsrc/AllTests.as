@@ -9,9 +9,13 @@ package
 	{
 		public function AllTests() 
 		{
+<<<<<<< HEAD
 			super();
  			addTest(new TestFirstTry("firstOne"));
 
+=======
+	 		 super();
+>>>>>>> c1cecfb95a9c77bf5b034e3b4a166ddb5869093d
 		}
 			
 		
