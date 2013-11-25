@@ -10,6 +10,7 @@ package
 		public var board:Board;
 		public var alternate:int;
 		public var lastMove:int = -1;
+		public var undoEnable:Boolean = true;
 		
 		public function Player() 
 		{
@@ -20,10 +21,14 @@ package
 		
 		public function undoMove():void 
 		{
-			if (lastMove != -1)
+			if(undoEnable)
 			{
-				board.cells[lastMove].marker = "null";
-				alternate = (alternate == 0?1:0);
+				if (lastMove != -1)
+				{
+					board.cells[lastMove].marker = "null";
+					alternate = (alternate == 0?1:0);
+				}
+				undoEnable = false;
 			}
 		}
 		public function makeMove(x:int,y:int):Boolean
@@ -35,6 +40,7 @@ package
 				if (board.cells[offset].marker == "null")
 				{	
 					lastMove = offset;
+					undoEnable = true;
 					board.cells[offset].mark(marker[alternate]);
 					if (board.won() == true)
 					{

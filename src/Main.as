@@ -3,33 +3,18 @@ package
  	import flash.display.Sprite;
 	import flash.events.Event;
 	import asunit.textui.TestRunner;
-	
-	/**
-=======
- 	
-	import flash.display.DisplayObject;
-	import flash.display.Sprite;
-	import flash.events.Event;
-	import flash.events.TextEvent;
-	import asunit.textui.TestRunner;
-	
-
- 	import flash.display.DisplayObject;
-	import flash.display.Sprite;
-	import flash.events.Event;
-	
- 	/**
+ 
+  	/**
  	 * ...
 	 * @author Anubhav
 	 */
-	public class Main extends Sprite 
+ 	public class Main extends Sprite 
 	{
-		
-		public function Main():void 
+ 		public function Main():void 
 		{
  			if (stage)
 			{
-		 		var unittests:TestRunner = new TestRunner();
+  		 		var unittests:TestRunner = new TestRunner();
 				stage.addChild(unittests);
 				unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
 		 		init();

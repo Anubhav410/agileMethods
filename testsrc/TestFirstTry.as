@@ -5,6 +5,7 @@ package
 	 * @author Anubhav
 	 */
 	import asunit.framework.TestCase
+	
 	public class TestFirstTry extends TestCase 
 	{
 		
@@ -93,9 +94,12 @@ package
 			pl.start();
 					
 			assertTrue(pl.makeMove(0, 0));
+			
 			assertFalse(pl.makeMove(0, 0));
 			
 			pl.undoMove();
+			
+			assertEquals(pl.board.cells[0].marker, "null");
 			
 			assertTrue(pl.makeMove(0, 0));
 
