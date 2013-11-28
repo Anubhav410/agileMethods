@@ -22,6 +22,8 @@ package
 		public var title:Sprite;
 		public var cells:Array;
 		public var textView:TextField;
+		var tf:TextFormat;
+
 		
 		[Embed(source = "../lib/cool1.png")]
 		private var Cool1Class:Class;
@@ -78,10 +80,10 @@ package
 			
 			
 			textView = new TextField();
-			textView.text = "1 : 0";
+			textView.text = "0 : 0";
 			textView.y = 130;
 			textView.x = 130;
-			var tf:TextFormat = new TextFormat();
+			tf = new TextFormat();
 			tf.size = 25;
 			tf.color = 0xFF0000;
 			textView.setTextFormat(tf);
@@ -107,7 +109,7 @@ package
 			
 			exitBtn = new Sprite();
 			exitBtn.addChild(new ExitClass());
-//			exitBtn.addEventListener(MouseEvent.CLICK, player.restart);
+			exitBtn.addEventListener(MouseEvent.CLICK, exitHandle);
 			exitBtn.y = 550;
 			this.addChild(exitBtn);
 
@@ -116,6 +118,11 @@ package
 			addChild(title);
 		
 			
+		}
+		
+		public function exitHandle(e:MouseEvent):void
+		{
+			System.exit(0);
 		}
 		
 		public function makeAllCellsZero():void
@@ -135,6 +142,7 @@ package
 			{
 	 			this.removeChild(allViewArray.pop());
 			}
+			boardView.addEventListener(MouseEvent.CLICK, onclick);
 		}
 		
 		public function markCell(offset:int,marker:String):void 
@@ -271,6 +279,8 @@ package
 		
 		public function updateScore():void
 		{
+			textView.text = score[0] + " : " + score[1];
+			textView.setTextFormat(tf);
 			
 		}
 		

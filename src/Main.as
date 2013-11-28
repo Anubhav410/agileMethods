@@ -16,8 +16,7 @@ package
 		{
  			if (stage)
 			{
-				System.exit(0);
-				player = new Player();
+ 				player = new Player();
 				player.start();
 				stage.addChild(player.board);
 				

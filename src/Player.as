@@ -46,6 +46,7 @@ package
 					if (board.won() == true)
 					{
 						board.score[alternate]++;
+						board.updateScore();
 						trace("Player : " + alternate+1 + " won the game");
 				//		this.stop();
 						trace("Winning marker.........." + marker[alternate]); 
