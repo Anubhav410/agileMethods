@@ -94,14 +94,7 @@ package
 			return ret;
 		}
 		
-		public function restart():Boolean 
-		{
-				board = null;
-				start();
-//				board.makeAllCellsZero();
-				return true;
-		}
-		
+ 		
 		public function stop():Boolean
 		{
 			if (board ==  null)

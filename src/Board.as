@@ -8,8 +8,15 @@ package
 	 */
 	public class Board extends Sprite
 	{
+		public var allViewArray:Array;
 		public var player:Player;
 		public var boardView:Sprite;// = new Sprite();
+		public var restartBtn:Sprite;
+		public var exitBtn:Sprite;
+		public var title:Sprite;
+		
+		[Embed(source = "../lib/title.png")]
+		private var TitleClass:Class;
 		
 		[Embed(source = "../lib/restart.png")]
 		private var RestartClass:Class;
@@ -38,6 +45,7 @@ package
 		
 		public function Board(pl:Player) 
 		{
+			allViewArray = new Array();	//this is the array of all the sprite object that will be added on to the board
 			player = pl;
 			boardView = new Sprite();
 			boardView.addChild(new boardClass());
@@ -46,9 +54,24 @@ package
 			cells = new Array();
 			makeAllCellsZero();
 			boardView.addEventListener(MouseEvent.CLICK, onclick);
+			boardView.y = 200;
 			this.addChild(boardView);
-		
+
+			restartBtn = new Sprite();
+			restartBtn.addChild(new RestartClass());
+			restartBtn.addEventListener(MouseEvent.CLICK, restartHandle);
+			restartBtn.y = 500;
+			this.addChild(restartBtn);
 			
+			exitBtn = new Sprite();
+			exitBtn.addChild(new ExitClass());
+			exitBtn.addEventListener(MouseEvent.CLICK, player.restart);
+			exitBtn.y = 550;
+			this.addChild(exitBtn);
+
+			title = new Sprite();
+			title.addChild(new TitleClass());
+			addChild(title);
 		}
 		
 		public function makeAllCellsZero():void
@@ -57,6 +80,16 @@ package
 			for (var i:int = 0 ; i < 9 ; i++)
 			{
  				cells[i] = new Cell();
+			}
+		}
+		
+		public function restartHandle(e:MouseEvent):void
+		{
+			makeAllCellsZero();
+			var l:int = allViewArray.length;
+			for ( var i:int = 0; i < l ; i++)
+			{
+	 			this.removeChild(allViewArray.pop());
 			}
 		}
 		
@@ -72,6 +105,8 @@ package
 		private function paintCell(x:int,y:int,marker:String):void
 		{
 			var cellView:Sprite = new Sprite();
+			allViewArray = allViewArray.concat(cellView);
+			//trace("length : " + allViewArray.length);
 			if(marker == "X")
 				cellView.addChild(new XClass());
 			else if( marker == "O")
@@ -83,7 +118,7 @@ package
 	
 				
 			cellView.x = 100*x + 5;
-			cellView.y = 100*y + 5;
+			cellView.y = 100*y + 5 + 200;
 
 			this.addChild(cellView);
 		}
@@ -129,7 +164,7 @@ package
 			if (cells[2].marker == cells[4].marker && cells[4].marker == cells[6].marker && cells[6].marker != "null")
 			{
 				paintCell(0, 2, "red" + cells[2].marker);
-				paintCell(2, 2, "red" + cells[2].marker);
+				paintCell(1, 1, "red" + cells[2].marker);
 				paintCell(2, 0, "red" + cells[2].marker);
 		//		trace("Awesome!!!!!");
 				return true;

@@ -7,7 +7,7 @@
     <movie path="bin\MyTicTac.swf" />
     <movie fps="30" />
     <movie width="800" />
-    <movie height="600" />
+    <movie height="800" />
     <movie version="10" />
     <movie minorVersion="1" />
     <movie platform="Flash Player" />
@@ -76,6 +76,8 @@
     <asset path="lib\z_red.png" update="..\..\z_red.png" />
     <asset path="lib\restart.png" update="..\..\restart.png" />
     <asset path="lib\EXIT.png" update="..\..\EXIT.png" />
+    <asset path="lib\title.png" update="..\..\title.png" />
+    <asset path="lib\restart.png" />
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
