@@ -79,7 +79,7 @@ package
 			if(board == null)
 			{
 				trace("Game Started");
-				board = new Board();
+				board = new Board(this);
 				ret = true;
 			}
 			else 

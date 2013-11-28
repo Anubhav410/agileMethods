@@ -8,6 +8,7 @@ package
 	 */
 	public class Board extends Sprite
 	{
+		public var player:Player;
 		public var boardView:Sprite;// = new Sprite();
 
 		[Embed(source = "../lib/board.png")]
@@ -21,8 +22,9 @@ package
 
 		public var cells:Array;
 		
-		public function Board() 
+		public function Board(pl:Player) 
 		{
+			player = pl;
 			boardView = new Sprite();
 			boardView.addChild(new boardClass());
 		
@@ -49,8 +51,15 @@ package
 			var y:int = offset % 3;
 			
 			var cellView:Sprite = new Sprite();
-			cellView.addChild(new XClass());
-			
+			if(marker == "X")
+				cellView.addChild(new XClass());
+			else
+				cellView.addChild(new ZClass());	
+				
+			cellView.x = 100*x + 5;
+			cellView.y = 100*y + 5;
+
+			this.addChild(cellView);
 		}
 
 		
@@ -110,7 +119,9 @@ package
 		{
 			var x:int = e.localX / 100;	
 			var y:int = e.localY / 100;	
-			trace(x + "," +y); 
+			trace(x + "," +y);
+ 			player.makeMove(x, y);
+			
 		}
 
 
