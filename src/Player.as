@@ -46,6 +46,8 @@ package
 					{
 						trace("Player : " + alternate+1 + " won the game");
 				//		this.stop();
+						trace("Winning marker.........." + marker[alternate]); 
+
 						res = false;
 					}
 					

@@ -72,6 +72,8 @@
     <asset path="lib\board.png" update="..\..\board.png" />
     <asset path="lib\x.png" update="..\..\x.png" />
     <asset path="lib\z.png" update="..\..\z.png" />
+    <asset path="lib\x_red.png" update="..\..\x_red.png" />
+    <asset path="lib\z_red.png" update="..\..\z_red.png" />
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
