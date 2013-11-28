@@ -19,6 +19,7 @@ package
 				player = new Player();
 				player.start();
 				stage.addChild(player.board);
+				
 //				boardView.addEventListener(MouseEvent.CLICK , onclick);
 				
 				

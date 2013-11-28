@@ -11,6 +11,13 @@ package
 		public var player:Player;
 		public var boardView:Sprite;// = new Sprite();
 		
+		[Embed(source = "../lib/restart.png")]
+		private var RestartClass:Class;
+		
+		[Embed(source = "../lib/EXIT.png")]
+		private var ExitClass:Class;
+
+		
 		[Embed(source = "../lib/x_red.png")]
 		private var XRedClass:Class;
 
@@ -40,6 +47,8 @@ package
 			makeAllCellsZero();
 			boardView.addEventListener(MouseEvent.CLICK, onclick);
 			this.addChild(boardView);
+		
+			
 		}
 		
 		public function makeAllCellsZero():void

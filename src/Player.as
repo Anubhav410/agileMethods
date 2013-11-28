@@ -96,7 +96,9 @@ package
 		
 		public function restart():Boolean 
 		{
-				board.makeAllCellsZero();
+				board = null;
+				start();
+//				board.makeAllCellsZero();
 				return true;
 		}
 		
