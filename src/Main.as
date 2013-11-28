@@ -16,6 +16,7 @@ package
 		{
  			if (stage)
 			{
+				System.exit(0);
 				player = new Player();
 				player.start();
 				stage.addChild(player.board);
@@ -37,6 +38,7 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			// entry point
+			
 		}
 		
 	}

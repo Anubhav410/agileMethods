@@ -1,5 +1,6 @@
 package  
 {
+	import flash.events.MouseEvent;
 	/**
 	 * ...
 	 * @author Anubhav
@@ -44,6 +45,7 @@ package
 					board.markCell(offset,marker[alternate]);
 					if (board.won() == true)
 					{
+						board.score[alternate]++;
 						trace("Player : " + alternate+1 + " won the game");
 				//		this.stop();
 						trace("Winning marker.........." + marker[alternate]); 
