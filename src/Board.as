@@ -1,18 +1,36 @@
 package  
 {
+	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	/**
 	 * ...
 	 * @author Anubhav
 	 */
-	public class Board 
+	public class Board extends Sprite
 	{
+		public var boardView:Sprite;// = new Sprite();
+
+		[Embed(source = "../lib/board.png")]
+		private var boardClass:Class;
+
+		[Embed(source = "../lib/z.png")]
+		private var ZClass:Class;
+
+		[Embed(source="../lib/x.png")]
+		private var XClass:Class;
+
 		public var cells:Array;
 		
 		public function Board() 
 		{
+			boardView = new Sprite();
+			boardView.addChild(new boardClass());
+		
 			trace("initailizing board cells");
 			cells = new Array();
 			makeAllCellsZero();
+			boardView.addEventListener(MouseEvent.CLICK, onclick);
+			this.addChild(boardView);
 		}
 		
 		public function makeAllCellsZero():void
@@ -24,8 +42,14 @@ package
 			}
 		}
 		
-		public function freeze():void 
+		public function markCell(offset:int,marker:String):void 
 		{
+			cells[offset].mark(marker);
+			var x:int = offset / 3;
+			var y:int = offset % 3;
+			
+			var cellView:Sprite = new Sprite();
+			cellView.addChild(new XClass());
 			
 		}
 
@@ -81,6 +105,14 @@ package
 	 	{
 			
 		}
+		
+		private function onclick(e:MouseEvent):void 
+		{
+			var x:int = e.localX / 100;	
+			var y:int = e.localY / 100;	
+			trace(x + "," +y); 
+		}
+
 
 	}
 

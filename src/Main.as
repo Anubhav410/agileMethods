@@ -3,20 +3,30 @@ package
  	import flash.display.Sprite;
 	import flash.events.Event;
 	import asunit.textui.TestRunner;
- 
+	import flash.events.MouseEvent;
   	/**
  	 * ...
 	 * @author Anubhav
 	 */
  	public class Main extends Sprite 
 	{
+	
+		private var player:Player;
  		public function Main():void 
 		{
  			if (stage)
 			{
-  		 		var unittests:TestRunner = new TestRunner();
-				stage.addChild(unittests);
-				unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
+				player = new Player();
+				player.start();
+				stage.addChild(player.board);
+//				boardView.addEventListener(MouseEvent.CLICK , onclick);
+				
+				
+				
+				
+  		// 		var unittests:TestRunner = new TestRunner();
+		//		stage.addChild(unittests);
+		//		unittests.start(AllTests, null, TestRunner.SHOW_TRACE);
 		 		init();
 			}
 			else addEventListener(Event.ADDED_TO_STAGE, init);

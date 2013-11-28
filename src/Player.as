@@ -41,7 +41,7 @@ package
 				{	
 					lastMove = offset;
 					undoEnable = true;
-					board.cells[offset].mark(marker[alternate]);
+					board.markCell(offset,marker[alternate]);
 					if (board.won() == true)
 					{
 						trace("Player : " + alternate+1 + " won the game");
@@ -113,6 +113,8 @@ package
 			board = null;
 			return true;
 		}
+		
+
   
 }
 }

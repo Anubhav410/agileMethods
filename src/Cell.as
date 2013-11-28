@@ -1,11 +1,13 @@
 package  
 {
+	import flash.display.Sprite;
 	/**
 	 * ...
 	 * @author Anubhav
 	 */
-	public class Cell 
+	public class Cell extends Sprite
 	{
+
 		public var marker:String;
 	 	public function Cell() 
 		{
@@ -15,6 +17,9 @@ package
 		{
 			trace("marking cell with : " + marker);
 	 		this.marker = marker;
+ 			
+ 			
+			
 		}
 	}
 
